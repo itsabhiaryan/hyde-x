@@ -1,0 +1,31 @@
+    <div class=pagination>
+        <ul class="pagination">
+            <li>
+                <a href="{{.Paginator.First.URL}}">««</a>
+            </li>
+            {{ if .Paginator.HasPrev }}
+            <li>
+                <a href="{{.Paginator.Prev.URL}}">«</a>
+            </li>
+            {{else}}
+            <li class="disabled">
+                <a href="Prev">«</a>
+            </li>
+            {{ end }}
+            <li class="active">
+                <a href="{{.Paginator.URL}}">{{.Paginator.PageNumber}}</a>
+            </li>
+            {{ if .Paginator.HasNext }}
+            <li>
+                <a href="{{.Paginator.Next.URL}}">»</a>
+            </li>
+            {{else}}
+            <li class="disabled">
+                <a href="Next">»</a>
+            </li>
+            {{ end }}
+            <li>
+                <a href="{{.Paginator.Last.URL}}">»»</a>
+            </li>
+        </ul>
+    </div>
